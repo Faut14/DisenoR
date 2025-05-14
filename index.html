@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Página móvil/pc</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  <header class="main-header">
+
+    <h1>🌟 Los ultimos 20 ganadores del mas prestigioso premio individual - EL BALON DE ORO🌟</h1>
+
+    <div class="gold-bar"></div>
+
+  </header>
+
+  
+
+  <main class="grid-container">
+
+    <!-- Tarjetas generadas con JavaScript -->
+
+  </main>
+
+</div>
+
+<script>
+
+// Lista completa de los últimos 20 ganadores (actualizar URLs de imágenes)
+
+const winners = [
+
+  { year: 2023, name: "Lionel Messi", team: "Paris Saint-Germain", nationality: "Argentina", image: "https://estaticos-cdn.prensaiberica.es/clip/60f01165-c5cf-494a-977b-f1a94cc8110a_alta-libre-aspect-ratio_default_0.jpg" },
+
+  { year: 2022, name: "Karim Benzema", team: "Real Madrid", nationality: "Francia", image: "https://example.com/benzema.jpg" },
+
+  { year: 2021, name: "Lionel Messi", team: "Paris Saint-Germain", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2020, name: "Robert Lewandowski", team: "Bayern Munich", nationality: "Polonia", image: "https://example.com/lewandowski.jpg" },
+
+  { year: 2019, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2018, name: "Luka Modrić", team: "Real Madrid", nationality: "Croacia", image: "https://example.com/modric.jpg" },
+
+  { year: 2017, name: "Cristiano Ronaldo", team: "Real Madrid", nationality: "Portugal", image: "https://example.com/ronaldo.jpg" },
+
+  { year: 2016, name: "Cristiano Ronaldo", team: "Real Madrid", nationality: "Portugal", image: "https://example.com/ronaldo.jpg" },
+
+  { year: 2015, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2014, name: "Cristiano Ronaldo", team: "Real Madrid", nationality: "Portugal", image: "https://example.com/ronaldo.jpg" },
+
+  { year: 2013, name: "Cristiano Ronaldo", team: "Real Madrid", nationality: "Portugal", image: "https://example.com/ronaldo.jpg" },
+
+  { year: 2012, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2011, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2010, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2009, name: "Lionel Messi", team: "Barcelona", nationality: "Argentina", image: "https://example.com/messi.jpg" },
+
+  { year: 2008, name: "Cristiano Ronaldo", team: "Manchester United", nationality: "Portugal", image: "https://example.com/ronaldo.jpg" },
+
+  { year: 2007, name: "Kaká", team: "AC Milan", nationality: "Brasil", image: "https://example.com/kaka.jpg" },
+
+  { year: 2006, name: "Fabio Cannavaro", team: "Real Madrid", nationality: "Italia", image: "https://example.com/cannavaro.jpg" },
+
+  { year: 2005, name: "Ronaldinho", team: "Barcelona", nationality: "Brasil", image: "https://example.com/ronaldinho.jpg" },
+
+  { year: 2004, name: "Andriy Shevchenko", team: "AC Milan", nationality: "Ucrania", image: "https://example.com/shevchenko.jpg" }
+
+];
+
+function generateCards() {
+
+  const container = document.querySelector('.grid-container');
+
+  
+
+  winners.forEach(winner => {
+
+    const card = document.createElement('article');
+
+    card.className = 'player-card';
+
+    card.innerHTML = `
+
+      <div class="card-frame">
+
+        <div class="gold-border"></div>
+
+        <img src="${winner.image}" alt="${winner.name}" class="player-image">
+
+        <div class="shine-effect"></div>
+
+      </div>
+
+      <div class="player-info">
+
+        <h2 class="player-name">${winner.name}</h2>
+
+        <div class="player-details">
+
+          <div class="detail-item">
+
+            <span class="detail-label">🏆 Año</span>
+
+            <span class="detail-value">${winner.year}</span>
+
+          </div>
+
+          <div class="detail-item">
+
+            <span class="detail-label">⚽ Equipo</span>
+
+            <span class="detail-value">${winner.team}</span>
+
+          </div>
+
+          <div class="detail-item">
+
+            <span class="detail-label">🌍 Nacionalidad</span>
+
+            <span class="detail-value">${winner.nationality}</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+generateCards();
+
+</script>
+<!-- partial -->
+  
+</body>
+</html>
